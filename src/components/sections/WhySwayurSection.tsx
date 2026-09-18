@@ -25,7 +25,7 @@ export const WhySwayurSection: React.FC = () => {
       highlights: [
         '5 × 10⁸ CFU/ml guaranteed potency',
         'FCO 1985 Schedule I compliant',
-        'ISO 9001:2015 quality standards',
+        'Insecticide 1968 standard quality',
       ],
       accentGradient: 'from-agri-primary via-agri-accent to-emerald-500',
     },
@@ -182,8 +182,8 @@ export const WhySwayurSection: React.FC = () => {
               <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5 text-agri-accent" />
             </div>
             <div>
-              <strong className="text-xs sm:text-sm font-extrabold text-slate-900 block">ISO 9001:2015</strong>
-              <span className="text-[11px] sm:text-xs text-slate-500 font-medium">International Quality Management</span>
+              <strong className="text-xs sm:text-sm font-extrabold text-slate-900 block">Insecticide 1968</strong>
+              <span className="text-[11px] sm:text-xs text-slate-500 font-medium">Standard Biological Pest Control</span>
             </div>
           </div>
         </div>

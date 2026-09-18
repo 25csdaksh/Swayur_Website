@@ -9,7 +9,7 @@ export const TrustBar: React.FC = () => {
     { icon: <Sprout className="w-4.5 h-4.5 text-agri-accent" />, text: 'Farmer-Tested & Proven' },
     { icon: <Recycle className="w-4.5 h-4.5 text-agri-accent" />, text: 'Eco-Friendly & Sustainable' },
     { icon: <CheckCircle2 className="w-4.5 h-4.5 text-agri-accent" />, text: 'FCO 1985 Schedule I' },
-    { icon: <Award className="w-4.5 h-4.5 text-agri-accent" />, text: 'ISO 9001:2015 Certified' },
+    { icon: <Award className="w-4.5 h-4.5 text-agri-accent" />, text: 'Insecticide 1968 Standard' },
   ];
 
   return (

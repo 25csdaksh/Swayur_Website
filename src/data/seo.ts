@@ -2,23 +2,23 @@ import { PageSEO } from '@/types';
 
 export const seoData: Record<string, PageSEO> = {
   home: {
-    metaTitle: 'Swayur Agrotech | Biofertilizers & Biopesticides India',
+    metaTitle: 'Swayur Agrotech LLP | Revitalising Soil. Empowering Farmers. Sustaining Life.',
     metaDescription:
-      'KshetraPal biofertilizers and biopesticides by Swayur Agrotech LLP. Science-backed biological inputs for Indian farmers. Revitalise soil. Sustain life.',
-    focusKeyword: 'biofertilizer India',
+      'KshetraPal biofertilizers, biopesticides, biostimulants & organic fertilizers by Swayur Agrotech LLP. Agricultural biotechnology from Anand, Gujarat. Revitalising Soil. Empowering Farmers. Sustaining Life.',
+    focusKeyword: 'agricultural biotechnology Gujarat',
     canonicalPath: '/',
   },
   about: {
-    metaTitle: 'About Swayur Agrotech LLP | Biological Agri Inputs Gujarat',
+    metaTitle: 'About Swayur Agrotech LLP | Agricultural Biotechnology Anand, Gujarat',
     metaDescription:
-      'Learn about Swayur Agrotech LLP — an agricultural biotechnology company from Anand, Gujarat, developing KshetraPal biological inputs for sustainable Indian farming.',
+      'Learn about Swayur Agrotech LLP — an agricultural biotechnology company founded in Anand, Gujarat, led by Dr. Mayur Joshi, Ph.D. in Microbiology, restoring soil vitality with beneficial microorganisms.',
     focusKeyword: 'agri biotech company Gujarat',
     canonicalPath: '/about',
   },
   products: {
-    metaTitle: 'KshetraPal Products | Biofertilizer & Biopesticide Range',
+    metaTitle: 'KshetraPal Range | Biofertilizers, Biopesticides & Biostimulants | Swayur Agrotech',
     metaDescription:
-      'Explore KshetraPal — Bio-NPK Consortia, Mycorrhiza, Trichoderma viride, Beauveria bassiana, Pseudomonas fluorescens, Bio-ZSB. FCO-approved biological inputs.',
+      'Explore KshetraPal agricultural biotechnology products by Swayur Agrotech — Bio-NPK Consortia, Bio-ZSB, Mycorrhiza, Trichoderma viride, Beauveria bassiana, and Pseudomonas fluorescens. FCO 1985 and Insecticide 1968 standard.',
     focusKeyword: 'KshetraPal biofertilizer',
     canonicalPath: '/products',
   },

@@ -31,7 +31,7 @@ export interface Product {
   id: string;
   slug: string;
   name: string;
-  category: 'Biofertilizer' | 'Biopesticide' | 'Biocontrol';
+  category: string;
   subcategory?: string;
   formulation: 'Liquid' | 'Powder (WP)';
   netContent?: string;

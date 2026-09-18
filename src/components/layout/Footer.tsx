@@ -169,7 +169,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap gap-4 text-[11px]">
             <span>FCO 1985 Schedule I Compliant</span>
             <span>•</span>
-            <span>ISO 9001:2015 Certified</span>
+            <span>Agricultural Biotechnology</span>
             <span>•</span>
             <span>Anand, Gujarat, India</span>
           </div>

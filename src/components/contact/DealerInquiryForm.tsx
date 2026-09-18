@@ -73,7 +73,7 @@ export const DealerInquiryForm: React.FC = () => {
             <span className="text-agri-muted block text-[11px] font-bold uppercase tracking-wider">
               Quality Assurance
             </span>
-            <strong className="text-base font-extrabold text-agri-dark">FCO 1985 & ISO 9001:2015</strong>
+            <strong className="text-base font-extrabold text-agri-dark">FCO 1985 Standard</strong>
           </div>
         </div>
 

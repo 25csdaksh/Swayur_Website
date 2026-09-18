@@ -2,26 +2,29 @@ import React from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import {
-  Target,
-  Eye,
   Microscope,
   Sprout,
   Leaf,
-  Lightbulb,
-  ShieldCheck,
-  FileText,
+  FlaskConical,
+  GraduationCap,
+  Globe2,
+  Building2,
   MapPin,
+  FileText,
+  Phone,
+  Mail,
+  ShieldCheck,
+  Quote,
+  Star,
+  CheckCircle2,
 } from 'lucide-react';
 import { companyData } from '@/data/company';
 import { seoData } from '@/data/seo';
-import { coreValuesData } from '@/data/about';
 import { Container } from '@/components/layout/Container';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Card } from '@/components/ui/Card';
-import { BiologicalComparison } from '@/components/sections/BiologicalComparison';
 import { CTASection } from '@/components/sections/CTASection';
-import { CircularStoryJourney } from '@/components/about/CircularStoryJourney';
 import { Badge } from '@/components/ui/Badge';
 
 export const metadata: Metadata = {
@@ -30,162 +33,152 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  const getIconComponent = (iconName: string) => {
-    switch (iconName) {
-      case 'Microscope':
-        return <Microscope className="w-7 h-7 text-agri-accent" />;
-      case 'Sprout':
-        return <Sprout className="w-7 h-7 text-agri-accent" />;
-      case 'Leaf':
-        return <Leaf className="w-7 h-7 text-agri-accent" />;
-      case 'Eye':
-        return <Eye className="w-7 h-7 text-agri-accent" />;
-      case 'Lightbulb':
-        return <Lightbulb className="w-7 h-7 text-agri-accent" />;
-      default:
-        return <ShieldCheck className="w-7 h-7 text-agri-accent" />;
-    }
-  };
+  const commitmentPillars = [
+    {
+      title: 'Restoring Soil Health',
+      quote:
+        'Swayur Agrotech biofertilizers activate natural soil microbial communities, restoring nutrient cycling and soil organic matter.',
+      badge: 'Soil Microbiome',
+    },
+    {
+      title: 'Targeted Biological Protection',
+      quote:
+        'KshetraPal biopesticides provide effective biological control against soil-borne pathogens and crop insect pests.',
+      badge: 'Biological Control',
+    },
+    {
+      title: 'Sustaining Farmer Livelihoods',
+      quote:
+        'By reducing dependence on expensive chemical inputs, our biological inputs help farmers lower input costs while improving harvest quality.',
+      badge: 'Farmer Value',
+    },
+  ];
+
+  const expertiseAreas = [
+    'Biofertilizers',
+    'Biopesticides',
+    'Organic Fertilizers',
+    'Biostimulants',
+    'Microbial Consortia',
+    'Fermentation Technology',
+    'Product Development',
+    'Environmental Biotechnology',
+    'Arid Condition Solutions',
+    'Nutrient Recovery',
+  ];
 
   return (
     <div className="space-y-16 sm:space-y-24 pb-12">
-      {/* 1. About Hero */}
+      {/* 1. Page Header */}
       <PageHeader
         badge="ABOUT SWAYUR AGROTECH"
         title="Who We Are"
-        subtitle="We are Swayur Agrotech LLP — an agricultural biotechnology company founded in Anand, Gujarat, with a singular mission: to restore Indian soil to its natural vitality using the power of beneficial microorganisms."
+        subtitle="Combining science, innovation, and practical agricultural solutions to build a healthier and more sustainable future for farming."
         breadcrumbs={[{ label: 'About Us' }]}
       />
 
-      {/* 2. Who We Are Overview */}
+      {/* 2. SECTION: WHO WE ARE */}
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Main Editorial Text Column */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-agri-pale text-agri-primary text-xs font-bold uppercase tracking-wider border border-agri-accent/20">
-              Swayur Philosophy
+              <FlaskConical className="w-3.5 h-3.5 text-agri-accent" />
+              <span>Biotechnology & Microbiology Science</span>
             </div>
+
             <h2 className="text-3xl sm:text-4xl font-extrabold text-agri-dark tracking-tight leading-tight">
-              Rooted in Natural Vitality & Science
+              Science, Innovation & Practical Agricultural Solutions
             </h2>
-            <p className="text-base text-agri-muted leading-relaxed font-normal">
-              The name <strong className="text-agri-dark font-bold">&ldquo;Swayur&rdquo;</strong> is rooted in the Sanskrit concept of self-sustained, natural vitality. That philosophy runs through every product we make and every farmer we serve.
-            </p>
-            <p className="text-base text-agri-muted leading-relaxed font-normal">
-              Operating under the product brand <strong className="text-agri-dark font-bold">KshetraPal ({companyData.brandGujarati})</strong> — meaning <em className="text-agri-primary font-semibold font-serif">&ldquo;Protector of the Field&rdquo;</em> — we develop biofertilizers, biopesticides, and microbial consortia designed specifically for Indian agro-climatic conditions, Indian crops, and Indian farmers.
-            </p>
-            <div className="pt-2 flex flex-wrap gap-3">
-              <Badge variant="green">FCO 1985 Compliant</Badge>
-              <Badge variant="dark">ISO 9001:2015 Certified</Badge>
+
+            <div className="prose prose-slate max-w-none text-agri-muted leading-relaxed text-base space-y-4 font-normal">
+              <p>
+                We are Swayur Agrotech LLP— an agricultural biotechnology company Founded in 2026 in Anand, Gujarat with a singular mission: to restore Indian soil to its natural vitality using the power of beneficial microorganisms.
+              </p>
+
+              <p>
+                Led by Dr. Mayur Joshi, Ph.D. in Microbiology, with 15+ years of industrial experience, Swayur brings expertise in biofertilizers, biopesticides, organic fertilizers, biostimulants, microbial consortia, fermentation technology, and product development.
+              </p>
+
+              <p>
+                With experience in India and Saudi Arabia, including solutions for arid and challenging agricultural conditions, our expertise also extends to environmental biotechnology, industrial wastewater treatment, microalgae-based technologies, nutrient recovery, and value-added organic fertilizers.
+              </p>
+
+              <p className="font-semibold text-agri-dark">
+                At Swayur, we combine science, innovation, and practical agricultural solutions to build a healthier and more sustainable future for farming.
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-wrap gap-2.5">
+              <Badge variant="green">FCO 1985 Standard</Badge>
               <Badge variant="gold">Anand, Gujarat Headquarters</Badge>
+              <Badge variant="dark">Beneficial Microorganisms</Badge>
             </div>
           </div>
 
-          <div className="lg:col-span-5">
-            <Card className="p-8 bg-gradient-to-br from-agri-pale/90 via-white to-emerald-50/50 border-2 border-agri-accent/30 space-y-6 shadow-sm">
-              <div className="pt-1">
+          {/* Founder & Scientific Expertise Card */}
+          <div className="lg:col-span-5 space-y-6">
+            <Card className="p-6 sm:p-8 bg-gradient-to-br from-agri-pale/90 via-white to-emerald-50/50 border-2 border-agri-accent/30 space-y-6 shadow-sm">
+              <div className="flex items-center justify-between border-b border-agri-border/60 pb-4">
                 <Image
                   src="/images/brand/swayur-agrotech-official-logo.png"
-                  alt="Swayur Agrotech Official Logo"
-                  width={400}
-                  height={160}
+                  alt="Swayur Agrotech Logo"
+                  width={300}
+                  height={120}
                   priority
-                  className="h-14 sm:h-18 w-auto object-contain"
+                  className="h-12 w-auto object-contain"
                 />
+                <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
+                  Est. 2026
+                </span>
               </div>
-              <h3 className="text-2xl font-bold text-agri-dark">{companyData.name}</h3>
-              <p className="text-sm text-agri-muted leading-relaxed">
+
+              {/* Founder Profile Box */}
+              <div className="p-4 rounded-2xl bg-white border border-agri-accent/20 shadow-2xs space-y-2.5">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-agri-pale text-agri-primary flex items-center justify-center shrink-0">
+                    <GraduationCap className="w-5 h-5 text-agri-accent" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-extrabold text-agri-dark">Dr. Mayur Joshi</h4>
+                    <span className="text-xs font-semibold text-agri-primary block">
+                      Ph.D. in Microbiology
+                    </span>
+                  </div>
+                </div>
+                <p className="text-xs text-agri-muted leading-relaxed">
+                  15+ years of industrial leadership across India & Saudi Arabia specializing in microbial formulations for arid & challenging conditions.
+                </p>
+              </div>
+
+              {/* Core Scientific Domains */}
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-agri-dark flex items-center gap-1.5">
+                  <Microscope className="w-3.5 h-3.5 text-agri-accent" />
+                  Areas of Industrial Expertise
+                </span>
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {expertiseAreas.map((exp, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2.5 py-1 rounded-lg bg-white border border-agri-border text-[11px] font-semibold text-agri-dark"
+                    >
+                      {exp}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Brand Tagline */}
+              <div className="pt-2 text-xs text-agri-muted italic border-t border-agri-border/60">
                 &ldquo;{companyData.tagline}&rdquo;
-              </p>
-              <div className="space-y-3 pt-2 text-xs text-agri-dark font-medium border-t border-agri-border/60">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-agri-accent shrink-0" />
-                  <span>Ta. & Dist. Anand, Gujarat, India</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FileText className="w-4 h-4 text-agri-accent shrink-0" />
-                  <span>LLPIN: {companyData.llpin} | GSTIN: {companyData.gstin}</span>
-                </div>
               </div>
             </Card>
           </div>
         </div>
       </Container>
 
-      {/* 3. Our Story ("The Journey Begins in the Soil") */}
-      <CircularStoryJourney />
-
-      {/* 4. Mission & Vision */}
-      <Container>
-        <SectionHeading
-          badge="Purpose & Direction"
-          title="Our Mission & Vision"
-          subtitle="Building a sustainable agricultural ecosystem from the ground up."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card className="p-8 bg-white border-2 border-agri-accent/30 space-y-4 shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-agri-pale text-agri-primary flex items-center justify-center">
-                <Target className="w-6 h-6 text-agri-accent" />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-agri-muted block">
-                  Our Mission
-                </span>
-                <h3 className="text-2xl font-extrabold text-agri-dark">Restoring Soil Health</h3>
-              </div>
-            </div>
-            <p className="text-sm sm:text-base text-agri-muted leading-relaxed font-normal">
-              To develop and deliver science-backed biological agricultural inputs that genuinely improve soil health, crop productivity, and farmer livelihoods — while reducing dependence on chemical fertilizers and protecting the environment for future generations.
-            </p>
-          </Card>
-
-          <Card className="p-8 bg-white border-2 border-agri-accent/30 space-y-4 shadow-xs">
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-agri-pale text-agri-primary flex items-center justify-center">
-                <Eye className="w-6 h-6 text-agri-accent" />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-agri-muted block">
-                  Our Vision
-                </span>
-                <h3 className="text-2xl font-extrabold text-agri-dark">Trusted Leadership</h3>
-              </div>
-            </div>
-            <p className="text-sm sm:text-base text-agri-muted leading-relaxed font-normal">
-              To become India&apos;s most trusted name in agricultural biologicals — recognized by farmers for results, by scientists for integrity, and by the industry for innovation — building a sustainable agriculture ecosystem from the ground up.
-            </p>
-          </Card>
-        </div>
-      </Container>
-
-      {/* 5. Core Values ("What We Stand For") */}
-      <section className="bg-white py-8">
-        <Container>
-          <SectionHeading
-            badge="Guiding Principles"
-            title="What We Stand For"
-            subtitle="Core values that guide our product formulations, testing, and farmer advisory."
-          />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {coreValuesData.map((val, idx) => (
-              <Card key={idx} className="space-y-4 p-6 bg-white border-agri-border">
-                <div className="w-12 h-12 rounded-xl bg-agri-pale flex items-center justify-center">
-                  {getIconComponent(val.iconName)}
-                </div>
-                <h3 className="text-xl font-bold text-agri-dark">{val.title}</h3>
-                <p className="text-xs sm:text-sm text-agri-muted leading-relaxed font-normal">
-                  {val.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* 6. Why Biological Inputs ("The Case for Biologicals") */}
-      <BiologicalComparison />
-
-      {/* 7. Company Details ("Legal & Registration Information") */}
+      {/* 3. CORPORATE INFORMATION */}
       <Container>
         <div className="max-w-4xl mx-auto space-y-6">
           <SectionHeading
@@ -208,44 +201,46 @@ export default function AboutPage() {
                     Product Brand
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 text-agri-dark font-semibold">
-                    {companyData.brand} ({companyData.brandGujarati})
+                    {companyData.brand} ({companyData.brandGujarati}) — &ldquo;Protector of the Field&rdquo;
                   </td>
                 </tr>
                 <tr className="bg-white">
+                  <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
+                    Nature of Business
+                  </td>
+                  <td className="py-3.5 px-4 sm:px-6 text-agri-dark font-semibold">
+                    {companyData.businessNature}
+                  </td>
+                </tr>
+                <tr className="bg-agri-pale/20">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
                     LLP Identification Number
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 font-mono text-agri-dark font-bold">{companyData.llpin}</td>
                 </tr>
-                <tr className="bg-agri-pale/20">
+                <tr className="bg-white">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
                     GSTIN
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 font-mono text-agri-dark font-bold">{companyData.gstin}</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-agri-pale/20">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
                     Registered Office
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 text-agri-muted font-medium">{companyData.address.full}</td>
                 </tr>
-                <tr className="bg-agri-pale/20">
+                <tr className="bg-white">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
                     Contact Phone / WhatsApp
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 text-agri-primary font-bold">{companyData.phone}</td>
                 </tr>
-                <tr className="bg-white">
+                <tr className="bg-agri-pale/20">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
                     Email Address
                   </td>
                   <td className="py-3.5 px-4 sm:px-6 text-agri-primary font-bold">{companyData.email}</td>
-                </tr>
-                <tr className="bg-agri-pale/20">
-                  <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
-                    Nature of Business
-                  </td>
-                  <td className="py-3.5 px-4 sm:px-6 text-agri-muted font-medium">{companyData.businessNature}</td>
                 </tr>
                 <tr className="bg-white">
                   <td className="py-3.5 px-4 sm:px-6 font-bold text-agri-dark bg-agri-pale/50">
@@ -261,7 +256,46 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      {/* 8. About Page CTA */}
+      {/* 4. COMMITMENT SECTION (Moved from Home Page) */}
+      <section className="bg-gradient-to-b from-white via-agri-pale/30 to-white py-12 sm:py-16">
+        <Container>
+          <SectionHeading
+            badge="OUR COMMITMENT"
+            title="Designed for Soil, Crops & Farmers"
+            subtitle="How KshetraPal biological inputs deliver value across Indian farming systems."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {commitmentPillars.map((pillar, idx) => (
+              <Card
+                key={idx}
+                className="flex flex-col justify-between space-y-6 p-8 bg-white border-agri-border hover:border-agri-accent/50 transition-all shadow-xs hover:shadow-md"
+              >
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold uppercase tracking-wider text-agri-primary px-3 py-1 rounded-md bg-agri-pale border border-agri-accent/20">
+                      {pillar.badge}
+                    </span>
+                    <Quote className="w-8 h-8 text-agri-accent/30" />
+                  </div>
+                  <h3 className="text-xl font-bold text-agri-dark">{pillar.title}</h3>
+                  <p className="text-sm text-agri-muted leading-relaxed font-normal">
+                    &ldquo;{pillar.quote}&rdquo;
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-1 text-amber-500 pt-3 border-t border-agri-border/60">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* 5. About Page CTA */}
       <CTASection
         title="Building Healthier Soil for a Sustainable Future"
         subtitle="Connect with our agronomy team in Vallabh Vidyanagar, Anand, Gujarat. Get crop recommendations or inquire about dealership opportunities."

@@ -1,126 +1,121 @@
 import React from 'react';
 import Image from 'next/image';
-import { ArrowRight, Award, CheckCircle2 } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight, Sparkles, Leaf, Dna, Sprout, ShieldCheck } from 'lucide-react';
 import { companyData } from '@/data/company';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/Button';
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
-import { Badge } from '@/components/ui/Badge';
 
 export const HeroSection: React.FC = () => {
+  const pillars = [
+    { label: 'Agriculture', icon: Sprout, desc: 'Empowering Indian farmers' },
+    { label: 'Soil Health', icon: Leaf, desc: 'Restoring natural vitality' },
+    { label: 'Biotechnology', icon: Dna, desc: 'Microbial science & R&D' },
+    { label: 'Sustainability', icon: ShieldCheck, desc: 'Chemical-free longevity' },
+  ];
+
   return (
-    <section className="relative overflow-hidden bg-transparent pt-12 sm:pt-16 lg:pt-24 pb-16 sm:pb-20">
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Value Proposition & CTAs */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            {/* Brand Eyebrow Badge */}
-            <div className="inline-flex flex-wrap items-center gap-2">
-              <Badge variant="green" className="text-xs font-extrabold uppercase tracking-wider py-1 px-3">
-                {companyData.brand} ({companyData.brandGujarati})
-              </Badge>
-              <span className="text-xs font-semibold text-agri-muted">
-                FCO 1985 Schedule I Compliant
-              </span>
-            </div>
+    <section className="relative min-h-[calc(100vh-80px)] flex items-center justify-center overflow-hidden py-16 sm:py-24 lg:py-28">
+      {/* 1. High-Quality Green Agricultural/Farm Hero Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/backgrounds/hero-farm-bg.jpg"
+          alt="Lush green agricultural farm - Swayur Agrotech"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center brightness-[0.88] contrast-[1.05]"
+        />
+        {/* Elegant multi-layer gradient overlay for pristine contrast and premium depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/75 to-emerald-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-transparent to-slate-950/50" />
+      </div>
 
-            {/* Main Headline */}
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-agri-dark tracking-tight leading-[1.15]">
-              Revitalise Soil, <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-agri-dark via-agri-primary to-agri-accent">
-                Sustain Life.
-              </span>
-            </h1>
-
-            {/* Subtitle / Intro */}
-            <p className="text-base sm:text-lg text-agri-muted max-w-2xl font-normal leading-relaxed">
-              Swayur Agrotech LLP manufactures high-potency biofertilizers and biopesticides formulated specifically for Indian soil conditions. Restore natural soil vitality, enhance crop yield, and reduce chemical dependence.
-            </p>
-
-            {/* Quick Proof Points */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-bold text-agri-dark">
-                <CheckCircle2 className="w-4 h-4 text-agri-accent shrink-0" />
-                <span>Up to 5×10⁸ CFU/ml</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-agri-dark">
-                <CheckCircle2 className="w-4 h-4 text-agri-accent shrink-0" />
-                <span>100% Residue-Free</span>
-              </div>
-              <div className="flex items-center gap-2 text-xs font-bold text-agri-dark">
-                <CheckCircle2 className="w-4 h-4 text-agri-accent shrink-0" />
-                <span>FCO 1985 Standard</span>
-              </div>
-            </div>
-
-            {/* Primary Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
-              <Button href="/products#explore-products" variant="primary" size="lg" className="w-full sm:w-auto shadow-md">
-                Explore KshetraPal Products
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-
-              <WhatsAppButton
-                text="WhatsApp Inquiry"
-                size="lg"
-                className="w-full sm:w-auto"
-              />
-            </div>
+      {/* 2. Main Hero Content Container */}
+      <Container className="relative z-10 text-white">
+        <div className="max-w-4xl mx-auto text-center space-y-8 sm:space-y-10">
+          {/* Prominent Swayur Agrotech LLP Logo Card */}
+          <div className="inline-flex flex-col items-center justify-center p-4 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-md border border-white/40 shadow-2xl transition-transform hover:scale-[1.02]">
+            <Image
+              src="/images/brand/swayur-agrotech-official-logo.png"
+              alt="Swayur Agrotech LLP Logo"
+              width={500}
+              height={180}
+              priority
+              className="h-14 sm:h-20 md:h-24 w-auto object-contain"
+            />
           </div>
 
-          {/* Right Column: Key Graphic / Trust Banner */}
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Product Range Feature Card */}
-              <div className="relative rounded-3xl bg-white/90 backdrop-blur-md p-5 sm:p-8 border-2 border-agri-accent/30 shadow-xl space-y-5 sm:space-y-6">
-                <div className="flex items-center justify-between">
-                  <Image
-                    src="/images/brand/kshetrapal-official-logo.png"
-                    alt="KshetraPal Brand Logo"
-                    width={300}
-                    height={100}
-                    priority
-                    className="h-10 sm:h-12 w-auto object-contain"
-                  />
-                  <Badge variant="gold">Biological Inputs</Badge>
-                </div>
-
-                <div className="space-y-2">
-                  <span className="text-xs font-bold text-agri-muted uppercase tracking-wider block">
-                    Product Brand
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-agri-dark">
-                    KshetraPal (ક્ષેત્રપાલ)
-                  </h3>
-                  <p className="text-xs text-agri-muted font-serif italic">
-                    &ldquo;Protector of the Field&rdquo;
-                  </p>
-                </div>
-
-                <div className="space-y-2.5 pt-2 border-t border-agri-border/60 text-xs">
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-1 border-b border-agri-border/40 gap-0.5 sm:gap-0">
-                    <span className="text-agri-muted">Biofertilizers</span>
-                    <span className="font-extrabold text-agri-dark">Bio-NPK, Bio-ZSB, Mycorrhiza</span>
-                  </div>
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-1 border-b border-agri-border/40 gap-0.5 sm:gap-0">
-                    <span className="text-agri-muted">Biopesticides</span>
-                    <span className="font-extrabold text-agri-dark">Trichoderma, Beauveria</span>
-                  </div>
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center py-1 gap-0.5 sm:gap-0">
-                    <span className="text-agri-muted">Biocontrol</span>
-                    <span className="font-extrabold text-agri-dark">Pseudomonas fluorescens</span>
-                  </div>
-                </div>
-
-                <div className="p-4 rounded-xl bg-agri-pale/80 border border-agri-accent/20 flex items-center gap-3">
-                  <Award className="w-6 h-6 text-agri-accent shrink-0" />
-                  <div className="text-xs">
-                    <strong className="text-agri-dark block">Anand, Gujarat Innovation</strong>
-                    <span className="text-agri-muted">Formulated for Indian agro-climatic conditions</span>
-                  </div>
-                </div>
-              </div>
+          {/* Tagline & Headline */}
+          <div className="space-y-4 sm:space-y-5">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs sm:text-sm font-extrabold uppercase tracking-widest backdrop-blur-sm">
+              <Sparkles className="w-4 h-4 text-emerald-300" />
+              <span>Agricultural Biotechnology • Anand, Gujarat</span>
             </div>
+
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.12] text-white">
+              Revitalising Soil.{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-green-300">
+                Empowering Farmers.
+              </span>{' '}
+              Sustaining Life.
+            </h1>
+
+            <p className="text-base sm:text-lg md:text-xl text-slate-200 max-w-2xl mx-auto font-normal leading-relaxed">
+              We develop science-backed biofertilizers, biopesticides, and microbial solutions formulated for Indian agro-climatic conditions — restoring natural soil vitality and driving sustainable agricultural productivity.
+            </p>
+          </div>
+
+          {/* 4 Core Pillars: Agriculture + Soil + Biotechnology + Sustainability */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl mx-auto pt-2">
+            {pillars.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-3 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 flex flex-col items-center justify-center text-center space-y-1.5 shadow-sm hover:bg-white/15 transition-all"
+                >
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/25 border border-emerald-400/40 flex items-center justify-center text-emerald-300">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <strong className="text-xs sm:text-sm font-bold text-white block">
+                    {item.label}
+                  </strong>
+                  <span className="text-[10px] sm:text-[11px] text-slate-300 font-medium leading-tight">
+                    {item.desc}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Button
+              href="/products"
+              variant="primary"
+              size="lg"
+              className="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-black shadow-xl px-8"
+            >
+              Explore KshetraPal Range
+              <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+
+            <Button
+              href="/about"
+              variant="outline"
+              size="lg"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-md px-8"
+            >
+              About Swayur Agrotech
+            </Button>
+
+            <WhatsAppButton
+              text="WhatsApp Inquiry"
+              size="lg"
+              className="w-full sm:w-auto"
+            />
           </div>
         </div>
       </Container>

@@ -5,7 +5,7 @@ export const companyData: CompanyInfo = {
   legalName: 'Swayur Agrotech LLP',
   brand: 'KshetraPal',
   brandGujarati: 'ક્ષેત્રપાલ',
-  tagline: 'Revitalise Soil, Sustain Life',
+  tagline: 'Revitalising Soil. Empowering Farmers. Sustaining Life.',
   llpin: 'ADA-0312',
   gstin: '24AFZFS7675D1Z8',
   address: {
@@ -20,6 +20,8 @@ export const companyData: CompanyInfo = {
   phone: '+91 9924838410',
   whatsapp: '+919924838410',
   email: 'swayuragrotech@gmail.com',
-  businessNature: 'Biological Agricultural Inputs — Biofertilizers, Biopesticides, Biostimulants',
-  regulatoryCompliance: ['FCO 1985 Compliant', 'ISO 9001:2015 Certified'],
+  businessNature:
+    'Biological Agricultural Inputs — Biofertilizers, Biopesticides, Biostimulants & Organic fertilizers',
+  regulatoryCompliance: ['FCO 1985 Compliant'],
 };
+

@@ -12,40 +12,78 @@ interface ProductFilterProps {
 export const ProductFilter: React.FC<ProductFilterProps> = ({ products }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const categories = ['All', 'Biofertilizer', 'Biopesticide', 'Biocontrol'];
+  const filterTabs = [
+    { label: 'All Products', value: 'All' },
+    { label: 'Biofertilizers', value: 'Biofertilizers' },
+    { label: 'Biopesticides & Biocontrol', value: 'Biopesticides' },
+  ];
 
-  const filteredProducts =
-    selectedCategory === 'All'
-      ? products
-      : products.filter((p) => p.category === selectedCategory);
+  const filteredProducts = products.filter((p) => {
+    if (selectedCategory === 'All') return true;
+    if (selectedCategory === 'Biofertilizers') {
+      return (
+        p.category.toLowerCase().includes('biofertilizer') ||
+        p.id === 'bio-npk-consortia' ||
+        p.id === 'bio-zsb' ||
+        p.id === 'mycorrhiza'
+      );
+    }
+    if (selectedCategory === 'Biopesticides') {
+      return (
+        p.category.toLowerCase().includes('biofungicide') ||
+        p.category.toLowerCase().includes('bioinsecticide') ||
+        p.category.toLowerCase().includes('biopesticide') ||
+        p.id === 'trichoderma-viride' ||
+        p.id === 'beauveria-bassiana' ||
+        p.id === 'pseudomonas-fluorescens'
+      );
+    }
+    return true;
+  });
 
   return (
     <div className="space-y-8">
       {/* Category Tabs */}
-      <div className="flex items-center sm:justify-center gap-2 p-1.5 rounded-xl bg-agri-pale/80 border border-agri-border/60 max-w-xl mx-auto overflow-x-auto no-scrollbar w-full whitespace-nowrap">
-        {categories.map((cat) => {
-          const isActive = selectedCategory === cat;
+      <div className="flex items-center sm:justify-center gap-2 p-1.5 rounded-2xl bg-agri-pale/80 border border-agri-border/60 max-w-xl mx-auto overflow-x-auto no-scrollbar w-full whitespace-nowrap shadow-xs">
+        {filterTabs.map((tab) => {
+          const isActive = selectedCategory === tab.value;
           const count =
-            cat === 'All'
+            tab.value === 'All'
               ? products.length
-              : products.filter((p) => p.category === cat).length;
+              : tab.value === 'Biofertilizers'
+              ? products.filter(
+                  (p) =>
+                    p.category.toLowerCase().includes('biofertilizer') ||
+                    p.id === 'bio-npk-consortia' ||
+                    p.id === 'bio-zsb' ||
+                    p.id === 'mycorrhiza'
+                ).length
+              : products.filter(
+                  (p) =>
+                    p.category.toLowerCase().includes('biofungicide') ||
+                    p.category.toLowerCase().includes('bioinsecticide') ||
+                    p.category.toLowerCase().includes('biopesticide') ||
+                    p.id === 'trichoderma-viride' ||
+                    p.id === 'beauveria-bassiana' ||
+                    p.id === 'pseudomonas-fluorescens'
+                ).length;
 
           return (
             <button
-              key={cat}
+              key={tab.value}
               type="button"
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => setSelectedCategory(tab.value)}
               className={cn(
-                'px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all duration-200 cursor-pointer',
+                'px-4 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all duration-200 cursor-pointer',
                 isActive
                   ? 'bg-agri-dark text-white shadow-xs'
                   : 'text-agri-muted hover:text-agri-dark hover:bg-white/60'
               )}
             >
-              <span>{cat}</span>
+              <span>{tab.label}</span>
               <span
                 className={cn(
-                  'ml-1.5 text-[11px] px-1.5 py-0.5 rounded-full font-bold',
+                  'ml-2 text-[11px] px-2 py-0.5 rounded-full font-extrabold',
                   isActive ? 'bg-agri-accent text-white' : 'bg-agri-border/60 text-agri-muted'
                 )}
               >

@@ -178,7 +178,7 @@ export const Product3DViewer: React.FC<Product3DViewerProps> = ({
       labelRadius = 1.158;
       labelPosY = 1.08;
     } else {
-      // --- 1 Litre Liquid Bottle Geometry ---
+      // --- 500 ml Liquid Bottle Geometry ---
       const points: THREE.Vector2[] = [];
       points.push(new THREE.Vector2(0, 0));
       points.push(new THREE.Vector2(0.9, 0));

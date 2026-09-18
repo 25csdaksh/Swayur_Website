@@ -26,7 +26,7 @@ export const ImpactStats: React.FC = () => {
       unit: 'Schedule I',
       label: 'Regulatory Standard',
       description: 'Govt. Quality Compliance',
-      badge: 'ISO Certified',
+      badge: 'Govt Verified',
     },
     {
       icon: <Leaf className="w-6 h-6 text-emerald-600" />,

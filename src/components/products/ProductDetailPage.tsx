@@ -177,7 +177,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({ product })
                 <div>
                   <span className="text-xs text-agri-muted block font-medium">Pack Net Vol / Wt</span>
                   <strong className="text-sm font-extrabold text-agri-dark">
-                    {product.netContent || (product.formulation === 'Liquid' ? '1 Litre' : '500 gm')}
+                    {product.netContent || (product.formulation === 'Liquid' ? '500 ml' : '500 gm')}
                   </strong>
                 </div>
               </div>
