@@ -7,7 +7,6 @@ import {
   Leaf,
   FlaskConical,
   GraduationCap,
-  Globe2,
   Building2,
   MapPin,
   FileText,
@@ -16,20 +15,17 @@ import {
   ShieldCheck,
   Quote,
   Star,
-  CheckCircle2,
   Sparkles,
-  ArrowRight,
-  Dna,
+  CheckCircle2,
+  HeartHandshake,
+  Compass,
 } from 'lucide-react';
 import { companyData } from '@/data/company';
 import { seoData } from '@/data/seo';
 import { Container } from '@/components/layout/Container';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Card } from '@/components/ui/Card';
 import { CTASection } from '@/components/sections/CTASection';
-import { Badge } from '@/components/ui/Badge';
-import { Button } from '@/components/ui/Button';
 
 export const metadata: Metadata = {
   title: seoData.about.metaTitle,
@@ -44,7 +40,6 @@ export default function AboutPage() {
         'Swayur Agrotech biofertilizers activate natural soil microbial communities, restoring nutrient cycling and soil organic matter.',
       badge: 'Soil Microbiome',
       icon: Leaf,
-      gradient: 'from-emerald-500/20 to-green-500/5',
       borderColor: 'hover:border-emerald-500/50',
     },
     {
@@ -53,7 +48,6 @@ export default function AboutPage() {
         'KshetraPal biopesticides provide effective biological control against soil-borne pathogens and crop insect pests.',
       badge: 'Biological Control',
       icon: ShieldCheck,
-      gradient: 'from-teal-500/20 to-cyan-500/5',
       borderColor: 'hover:border-teal-500/50',
     },
     {
@@ -62,7 +56,6 @@ export default function AboutPage() {
         'By reducing dependence on expensive chemical inputs, our biological inputs help farmers lower input costs while improving harvest quality.',
       badge: 'Farmer Value',
       icon: Sprout,
-      gradient: 'from-amber-500/20 to-emerald-500/5',
       borderColor: 'hover:border-amber-500/50',
     },
   ];
@@ -80,6 +73,24 @@ export default function AboutPage() {
     'Nutrient Recovery',
   ];
 
+  const philosophyPillars = [
+    {
+      title: 'Living Soil Over Sterile Soil',
+      desc: 'Healthy soil is not an inert medium for chemicals; it is a thriving living ecosystem powered by billions of beneficial bacteria and fungi.',
+      icon: Leaf,
+    },
+    {
+      title: 'Farmer Prosperity & Input Efficiency',
+      desc: 'Lowering farmer cost per acre by mobilizing locked soil phosphorus, nitrogen, and micronutrients naturally without chemical overuse.',
+      icon: HeartHandshake,
+    },
+    {
+      title: 'Residue-Free Food Production',
+      desc: 'Enabling export-quality, zero-chemical-residue harvests that safeguard consumer health and restore agro-ecosystem balance.',
+      icon: ShieldCheck,
+    },
+  ];
+
   const corporateDetails = [
     { label: 'Company Name', value: companyData.name, icon: Building2, highlight: true },
     { label: 'Product Brand', value: `${companyData.brand} (${companyData.brandGujarati}) — "Protector of the Field"`, icon: Sparkles },
@@ -93,8 +104,8 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16">
-      {/* 1. Page Header */}
+    <div className="space-y-16 sm:space-y-24 pb-16 bg-[#FBFDFB]">
+      {/* 1. Page Header / Hero */}
       <PageHeader
         badge="ABOUT SWAYUR AGROTECH"
         title="Who We Are"
@@ -118,7 +129,7 @@ export default function AboutPage() {
 
             <div className="prose prose-slate max-w-none text-agri-muted leading-relaxed text-base space-y-4 font-normal">
               <p className="text-lg text-agri-dark font-medium leading-relaxed">
-                We are Swayur Agrotech LLP— an agricultural biotechnology company Founded in 2026 in Anand, Gujarat with a singular mission: to restore Indian soil to its natural vitality using the power of beneficial microorganisms.
+                We are Swayur Agrotech LLP— an agricultural biotechnology company based in Anand, Gujarat with a singular mission: to restore Indian soil to its natural vitality using the power of beneficial microorganisms.
               </p>
 
               <p>
@@ -133,38 +144,29 @@ export default function AboutPage() {
                 At Swayur, we combine science, innovation, and practical agricultural solutions to build a healthier and more sustainable future for farming.
               </div>
             </div>
-
-            <div className="pt-2 flex flex-wrap gap-2.5">
-              <Badge variant="green" className="py-1 px-3 text-xs">FCO 1985 Standard</Badge>
-              <Badge variant="gold" className="py-1 px-3 text-xs">Anand, Gujarat Headquarters</Badge>
-              <Badge variant="dark" className="py-1 px-3 text-xs">Beneficial Microorganisms</Badge>
-            </div>
           </div>
 
           {/* Founder & Scientific Expertise Card */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#0F382C] via-[#174E3C] to-[#0A261E] text-white p-6 sm:p-8 shadow-2xl border border-emerald-500/20 space-y-6 overflow-hidden">
-              {/* Background ambient glow */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl pointer-events-none" />
-
+            <div className="relative rounded-3xl bg-gradient-to-br from-[#0F382C] via-[#174E3C] to-[#0A261E] text-white p-6 sm:p-8 shadow-xl border border-emerald-500/20 space-y-6 overflow-hidden">
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="p-2 rounded-xl bg-white/95">
+                <div className="p-2.5 rounded-2xl bg-white shadow-md">
                   <Image
                     src="/images/brand/swayur-agrotech-official-logo.png"
                     alt="Swayur Agrotech Logo"
-                    width={240}
-                    height={90}
+                    width={180}
+                    height={160}
                     priority
-                    className="h-10 w-auto object-contain"
+                    className="h-14 sm:h-16 w-auto object-contain"
                   />
                 </div>
                 <span className="text-[11px] font-extrabold px-3 py-1 rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
-                  Est. 2026 • Gujarat
+                  Anand • Gujarat
                 </span>
               </div>
 
               {/* Founder Profile Box */}
-              <div className="relative z-10 p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 space-y-3 shadow-inner">
+              <div className="relative z-10 p-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 space-y-3">
                 <div className="flex items-center gap-3.5">
                   <div className="w-12 h-12 rounded-2xl bg-emerald-400/20 border border-emerald-300/30 flex items-center justify-center text-emerald-300 shrink-0">
                     <GraduationCap className="w-6 h-6" />
@@ -191,28 +193,56 @@ export default function AboutPage() {
                   {expertiseAreas.map((exp, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-semibold text-slate-200 hover:bg-white/20 transition-colors"
+                      className="px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-sm border border-white/15 text-[11px] font-semibold text-slate-200"
                     >
                       {exp}
                     </span>
                   ))}
                 </div>
               </div>
-
-              {/* Brand Tagline */}
-              <div className="relative z-10 pt-2 text-xs text-emerald-200/80 italic font-serif border-t border-white/10">
-                &ldquo;{companyData.tagline}&rdquo;
-              </div>
             </div>
           </div>
         </div>
       </Container>
 
-      {/* 3. CORPORATE INFORMATION */}
+      {/* 3. SECTION: SWAYUR PHILOSOPHY */}
+      <section className="py-14 sm:py-20 bg-gradient-to-b from-white via-agri-pale/40 to-white border-y border-agri-border/70">
+        <Container>
+          <SectionHeading
+            badge="OUR CORE PHILOSOPHY"
+            title="Revitalising Soil. Empowering Farmers. Sustaining Life."
+            subtitle="The fundamental principles guiding our agricultural biotechnology research and farmer-first solutions."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {philosophyPillars.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="rounded-3xl bg-white border border-agri-border/90 p-8 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 space-y-4"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-agri-pale text-agri-primary flex items-center justify-center border border-agri-accent/20">
+                    <Icon className="w-6 h-6 text-agri-accent" />
+                  </div>
+                  <h3 className="text-xl font-black text-agri-dark tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-agri-muted leading-relaxed font-normal">
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. SECTION: CORPORATE INFORMATION */}
       <Container>
         <div className="max-w-5xl mx-auto space-y-8">
           <SectionHeading
-            badge="Corporate Information"
+            badge="CORPORATE INFORMATION"
             title="Legal & Registration Information"
             subtitle="Official corporate parameters, GSTIN, LLPIN, registered address, and regulatory compliance details."
           />
@@ -251,8 +281,8 @@ export default function AboutPage() {
         </div>
       </Container>
 
-      {/* 4. COMMITMENT SECTION (Moved from Home Page) */}
-      <section className="bg-gradient-to-b from-white via-agri-pale/40 to-white py-14 sm:py-20 border-y border-agri-border/60">
+      {/* 5. SECTION: COMMITMENT (Anchor: #commitment) */}
+      <section id="commitment" className="bg-gradient-to-b from-white via-agri-pale/40 to-white py-14 sm:py-20 border-y border-agri-border/60">
         <Container>
           <SectionHeading
             badge="OUR COMMITMENT"
@@ -301,7 +331,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* 5. About Page CTA */}
+      {/* 6. About Page CTA */}
       <CTASection
         title="Building Healthier Soil for a Sustainable Future"
         subtitle="Connect with our agronomy team in Vallabh Vidyanagar, Anand, Gujarat. Get crop recommendations or inquire about dealership opportunities."

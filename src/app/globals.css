@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-agri-dark: #0F382C;
-  --color-agri-primary: #174E3C;
-  --color-agri-medium: #226D54;
-  --color-agri-accent: #2E8B57;
-  --color-agri-light: #48BB78;
-  --color-agri-pale: #F0F6F3;
-  --color-agri-surface: #FAFBF8;
-  --color-agri-gold: #D4AF37;
-  --color-agri-earth: #8B5E3C;
-  --color-agri-text: #1C2622;
-  --color-agri-muted: #4A5852;
-  --color-agri-border: #E1E8E4;
+  --color-agri-dark: #0B291E;
+  --color-agri-primary: #124A36;
+  --color-agri-medium: #1B664B;
+  --color-agri-accent: #238C5A;
+  --color-agri-light: #38A169;
+  --color-agri-pale: #F2F7F4;
+  --color-agri-surface: #FFFFFF;
+  --color-agri-gold: #C69214;
+  --color-agri-earth: #7A4E2D;
+  --color-agri-text: #1A2621;
+  --color-agri-muted: #52635C;
+  --color-agri-border: #E2ECE6;
 }
 
 :root {
-  --background: #FAFBF8;
-  --foreground: #1C2622;
+  --background: #FBFDFB;
+  --foreground: #1A2621;
 }
 
 html {
@@ -36,65 +36,52 @@ body {
   max-width: 100vw;
 }
 
-/* Glassmorphism & Premium UI Utilities */
-.glass-card {
-  background: rgba(255, 255, 255, 0.88);
+/* Glassmorphism & Light Theme Utilities */
+.glass-light {
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(226, 236, 230, 0.8);
 }
 
-.glass-dark {
-  background: rgba(11, 40, 31, 0.85);
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(226, 236, 230, 0.8);
 }
 
-.glass-pill {
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+.product-studio-shadow {
+  filter: drop-shadow(0 16px 24px rgba(11, 41, 30, 0.16)) drop-shadow(0 6px 10px rgba(11, 41, 30, 0.08));
 }
 
-.glow-emerald {
-  box-shadow: 0 10px 40px -10px rgba(46, 139, 87, 0.35);
+.product-hover-shadow {
+  filter: drop-shadow(0 24px 36px rgba(11, 41, 30, 0.22)) drop-shadow(0 10px 16px rgba(11, 41, 30, 0.12));
 }
 
-.glow-card {
-  box-shadow: 0 20px 45px -15px rgba(15, 56, 44, 0.12);
-}
-
-.text-gradient-hero {
-  background: linear-gradient(135deg, #ffffff 15%, #a7f3d0 60%, #6ee7b7 100%);
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0B291E 0%, #124A36 60%, #238C5A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-dark {
-  background: linear-gradient(135deg, #0F382C 0%, #174E3C 55%, #2E8B57 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Custom Scrollbar */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAFBF8;
+  background: #F2F7F4;
 }
 ::-webkit-scrollbar-thumb {
-  background: #226D54;
+  background: #1B664B;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #0F382C;
+  background: #0B291E;
 }
 
 /* Focus styles for accessibility */
 *:focus-visible {
-  outline: 2px solid #2E8B57;
+  outline: 2px solid #238C5A;
   outline-offset: 2px;
 }
